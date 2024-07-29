@@ -179,7 +179,7 @@ document.getElementById('categoryForm').addEventListener('submit', async (e) => 
             } else {
                  const data = await response.json();
                 msgResponse.innerHTML = `<span class="alert alert-danger">${data.message}</span>`;
-                console.error(${data.message});
+                console.error(data.message);
             }
         } catch (error) {
             categoryResponse.innerHTML = '<span class="alert alert-danger">An error occurred. Please try again later.</span>';
