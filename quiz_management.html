@@ -42,18 +42,12 @@
             </section>
             <br><br>
             <section class="quiz-editor">
-                <h2>Quiz Editor</h2>
-                <form action="save_quiz.php" method="POST">
-                    <label for="quiz-title">Quiz Title:</label>
+                <h2>Quiz Questions</h2>
+                <form>
+                    <label for="quiz-title">Quiz Question:</label>
                     <input type="text" id="quiz-title" name="quiz-title" required>
-                    <label for="quiz-category">Category:</label>
+                    <label for="quiz-category">Select Quiz Category:</label>
                     <select id="quiz-category" name="quiz-category" required>
-                        <option value="general">General</option>
-                        <option value="science">Science</option>
-                        <option value="history">History</option>
-                        <option value="history">History</option>
-                        <option value="history">History</option>
-                        <option value="history">History</option>
                     </select>
                     <label for="quiz-description">Description:</label>
                     <textarea id="quiz-description" name="quiz-description" rows="4" cols="50"></textarea>
@@ -149,6 +143,7 @@
                     categoryResponse.innerHTML = `<span class="alert alert-success"><strong>${data.category_name}</strong> Category has been Created</span>`;
                     console.log('Category added:', data.category_name);
                     getAllCategories();
+                    getAllCategoriesDropdown()
                 } else {
                     const data = await response.json();
                     categoryResponse.innerHTML = `<span class="alert alert-danger">${data.category_name || 'An error occurred'}</span>`;
@@ -195,6 +190,63 @@
 
 
         }
+
+
+
+
+        async function getAllCategoriesDropdown() {
+            const categoryDropdown = document.getElementById('quiz-category');
+
+
+            try {
+                const response = await fetch('https://quizza-rest-api.onrender.com/category', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    categoryDropdown.innerHTML = '<option value="">--Select a Category--</option>'; // Clear existing options and add a default option
+
+                    data.forEach(category => {
+                        const option = document.createElement('option');
+                        option.value = category.id; // Use category ID as the value
+                        option.textContent = category.category_name; // Display category name
+                        categoryDropdown.appendChild(option);
+                    });
+                } else {
+                    const data = await response.json();
+                    categoryResponse.innerHTML = `<span class="alert alert-danger">${data.category_name || 'An error occurred'}</span>`;
+                    console.error('Error response:', data.category_name || 'An error occurred');
+                }
+            } catch (error) {
+                categoryResponse.innerHTML = `<span class="alert alert-danger">An error occurred. Please try again later.</span>`;
+                console.error('An error occurred:', error);
+            }
+        }
+
+        getAllCategoriesDropdown();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         getAllCategories();
