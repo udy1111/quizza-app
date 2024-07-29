@@ -53,8 +53,10 @@
         
         if (response.ok) {
             const data = await response.json();
-            msgResponse.innerHTML = '<span class="alert alert-success">Login successful</span>';
-            console.log('Login successful:', data.message);
+            msgResponse.innerHTML = '<span class="alert alert-success">Login successful...<br> you would be redirecte to your dashboard in 3secs...</span>';
+            setTimeout(() => {
+                    window.location.href = 'quiz_management.html';
+                }, 3000);
         } else {
             msgResponse.innerHTML = '<span class="alert alert-danger">Invalid Login Credentials</span>';
             console.error('Login failed:', response.statusText);
