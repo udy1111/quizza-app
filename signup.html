@@ -29,6 +29,7 @@
                 <input type="password" id="password" name="password" required>
                 
                 <button type="submit" id="signupbtn">Sign Up</button>
+                <br>
                 <small>Already have an account? <strong><a href="login.html">Login</a></strong></small>
             </form>
         </div>
@@ -73,8 +74,8 @@
         console.error('An error occurred:', error);
     }finally {
            
-            loginbtn.disabled = false;
-            loginbtn.textContent = 'Sign Up';
+                    signupbtn.disabled = false;
+                    signupbtn.textContent = 'Sign Up';
         }
         });
 
