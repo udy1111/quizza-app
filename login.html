@@ -15,9 +15,9 @@
         </header>
 
         <div class="form-container">
-            <form action="login.php" method="POST">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
+            <form id="login-form">
+                <label for="username">Email:</label>
+                <input type="email" id="email" name="email" required>
                 
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
@@ -49,22 +49,7 @@
             }
         });
 
-        document.getElementById('get-profile').addEventListener('click', async () => {
-            const response = await fetch('/api/users/profile', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                credentials: 'include', // Include cookies in the request
-            });
-
-            if (response.ok) {
-                const profile = await response.json();
-                console.log('User Profile:', profile);
-            } else {
-                console.error('Failed to fetch profile:', response.statusText);
-            }
-        });
+    
     </script>
 </body>
 </html>
