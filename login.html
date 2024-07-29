@@ -15,6 +15,7 @@
         </header>
 
         <div class="form-container">
+            <div id="msg-response"></div>
             <form id="login-form">
                 <label for="username">Email:</label>
                 <input type="email" id="email" name="email" required>
@@ -31,6 +32,7 @@
             e.preventDefault();
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
+           const msg-response = document.getElementById('msg-response');
 
             const response = await fetch('https://quizza-rest-api.onrender.com/auth/login', {
                 method: 'POST',
@@ -43,8 +45,10 @@
 
             if (response.ok) {
                 const data = await response.json();
+                msg-response.innerHTML = '<span style"background-color: green; color: white;">Login successful</span>';
                 console.log('Login successful:', data.message);
             } else {
+                 msg-response.innerHTML = '<span style"background-color: red; color: white;">Invalid Login Credentials</span>';
                 console.error('Login failed:', response.statusText);
             }
         });
