@@ -21,6 +21,36 @@
         <main>
             <h1>Quiz Creation and Management</h1>
             <div class="container">
+
+
+         <section class="category">
+             <div id="categoryResponse"></div>
+                    <h2>Quiz Categories</h2>
+                    <p>Manage your quiz categories here.</p>
+                    <form id="categoryForm">
+                        <label for="new-category">Add New Category:</label>
+                        <input type="text" id="new-category" name="category_name" required>
+                        <button type="submit">Add Category</button>
+                    </form>
+                    <h3>Existing Categories</h3>
+                    <ul>
+                        <li>General <button type="button">Edit</button> <button type="button">Delete</button></li>
+                        <li>Science <button type="button">Edit</button> <button type="button">Delete</button></li>
+                        <li>History <button type="button">Edit</button> <button type="button">Delete</button></li>
+                        <!-- Add more categories as needed -->
+                    </ul>
+                </section>
+
+
+
+
+
+
+
+
+
+
+                
                 <section class="quiz-editor">
                     <h2>Quiz Editor</h2>
                     <form action="save_quiz.php" method="POST">
@@ -47,22 +77,7 @@
                     </form>
                 </section>
     
-                <section class="category">
-                    <h2>Quiz Categories</h2>
-                    <p>Manage your quiz categories here.</p>
-                    <form action="manage_categories.php" method="POST">
-                        <label for="new-category">Add New Category:</label>
-                        <input type="text" id="new-category" name="new-category" required>
-                        <button type="submit">Add Category</button>
-                    </form>
-                    <h3>Existing Categories</h3>
-                    <ul>
-                        <li>General <button type="button">Edit</button> <button type="button">Delete</button></li>
-                        <li>Science <button type="button">Edit</button> <button type="button">Delete</button></li>
-                        <li>History <button type="button">Edit</button> <button type="button">Delete</button></li>
-                        <!-- Add more categories as needed -->
-                    </ul>
-                </section>
+           
     
                 <section class="template">
                     <h2>Quiz Templates</h2>
@@ -135,11 +150,58 @@
             </div>
         </main>
 
-        <!--<script>
-            document.querySelector('.profile-dropdown img').addEventListener('click', function() {
-                const dropdownContent = document.querySelector('.profile-dropdown-content');
-                dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+        <script>
+            // document.querySelector('.profile-dropdown img').addEventListener('click', function() {
+            //     const dropdownContent = document.querySelector('.profile-dropdown-content');
+            //     dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+            // });
+
+// Create Quiz Category
+document.getElementById('categoryForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const category_name = document.getElementById('new-category').value;
+     var categoryResponse = document.getElementById('categoryResponse');
+     try {
+            const response = await fetch('https://quizza-rest-api.onrender.com/category', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ category_name }),
             });
-        </script> -->
+
+            if (response.ok) {
+                const data = await response.json();
+                categoryResponse.innerHTML = `<span class="alert alert-success">${data.message}</span>`;
+                console.log(data.message);
+               
+            } else {
+                 const data = await response.json();
+                msgResponse.innerHTML = `<span class="alert alert-danger">${data.message}</span>`;
+                console.error(${data.message});
+            }
+        } catch (error) {
+            categoryResponse.innerHTML = '<span class="alert alert-danger">An error occurred. Please try again later.</span>';
+            console.error('An error occurred:', error);
+        } finally {
+            loginbtn.disabled = false;
+            loginbtn.textContent = 'Login';
+        }
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+    
+        </script>
 </body>
 </html>
