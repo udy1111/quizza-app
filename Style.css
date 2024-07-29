@@ -378,7 +378,7 @@ button {
 
 
 /*Quiz management*/
-header {
+.management {
     display: flex;
     justify-content: space-between;
     align-items: center;
