@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="Logo.png">
     <title>Login</title>
+     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
     <main>
         <header>
-            <h1 style="color: white;">Login to Quizza</h1>
+            <h1 class="alert alert-dark">Login to Quizza</h1>
         </header>
-
+  <div id="msgresponse"></div>
         <div class="form-container">
-            <div id="msgresponse"></div>
+          
             <form id="login-form">
                 <label for="username">Email:</label>
                 <input type="email" id="email" name="email" required>
@@ -52,14 +53,14 @@
         
         if (response.ok) {
             const data = await response.json();
-            msgResponse.innerHTML = '<span style="background-color: green; color: white;">Login successful</span>';
+            msgResponse.innerHTML = '<span class="alert alert-success">Login successful</span>';
             console.log('Login successful:', data.message);
         } else {
-            msgResponse.innerHTML = '<span style="background-color: red; color: white;">Invalid Login Credentials</span>';
+            msgResponse.innerHTML = '<span class="alert alert-danger">Invalid Login Credentials</span>';
             console.error('Login failed:', response.statusText);
         }
     } catch (error) {
-        msgResponse.innerHTML = '<span style="background-color: red; color: white;">An error occurred. Please try again later.</span>';
+        msgResponse.innerHTML = '<span class="alert alert-danger">An error occurred. Please try again later.</span>';
         console.error('An error occurred:', error);
     }finally {
            
