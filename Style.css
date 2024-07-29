@@ -1,0 +1,813 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*set the default font for the body*/
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FAF9F6;
+}
+
+/*set the default font for the header*/
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.hello{
+    position: absolute;
+    height: auto;
+    left: 0px;
+    width: 214px;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    margin: 0 120px 0 120px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a{
+    font-size: 16px;
+    color: #1e1e11;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0px 25px;
+    transition: 3s;
+}
+
+.navbar a:hover, 
+.navbar a.active {
+    color: #ffb662;
+}
+
+.btn{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: #392f4d;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#SignupBtn{
+    margin-left: 15px;
+    color: #fff;
+    font-weight: 600;
+}
+
+#LoginBtn{
+   border: 2px solid #392f4d;
+   background: none;
+   color: #1e1e11;
+   font-weight: 600;
+}
+
+.Home{
+    height: 100vh;
+    width: 100%;
+    margin-left: 120px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.Home-content{
+   max-width: 600px; 
+   display: inline-block;
+   align-items: center;
+   flex-direction: column;
+}
+
+.Home-content h1{
+    font-size: 58px;
+    font-weight: 700;
+    color: #392f4d;
+}
+
+.Home-content p{
+    font-size:  16px;
+    text-align: left;
+    margin-bottom: 30px;
+    color: #1e1e11;
+}
+
+.Home-content .StartBtn{
+    width: 190px;
+    height: 55px;
+    background: #392f4d;
+    border-radius: 10px;
+    color: #fff;
+    border: 2px solid #ffb662;
+    outline: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/*Hero image styling*/
+.hero-image{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*Feature section*/
+
+Section{
+    margin-bottom: 40px;
+}
+
+.Feature {
+    display: flex;
+    margin-left: 120px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    padding: 20px;
+}
+
+.Feature-definition {
+    flex: 1;
+    margin-right: 20px; /* Space between content and image */
+}
+
+.Feature-definition h2 {
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.Feature-definition h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px; /* Space between h3 and the paragraphs */
+}
+
+.Feature-definition p {
+    margin: 10px 0; /* Space between paragraphs */
+    line-height: 1.6; /* Adjust line height for readability */
+}
+
+.Feature1-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*text-align: right; /* Aligns the image to the right */
+}
+
+.Feature1-image img {
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #392f4d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #ffb662;
+}
+
+.Feature2 {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    justify-content: space-between; /* Distribute space between items */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    padding: 20px;
+}
+
+.Feature2-image {
+    flex: 1;
+    flex: 1;
+    display: flex;
+    margin-left: 120px;
+    justify-content: left;
+    align-items: center;
+    margin-right: 20px; /* Space between the image and content */
+    /*text-align: center; /* Centers the image inside its container */
+}
+
+.Feature2-image img {
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto; /* Maintains aspect ratio */
+}
+
+.Feature2-definition {
+    flex: 1;
+    margin-right: 120px;
+}
+
+.Feature2-definition h2 {
+    margin-bottom: 20px; /* Space below h2 */
+}
+
+.Feature2-definition p {
+    margin: 10px 0; /* Space between paragraphs */
+    line-height: 1.6; /* Adjust line height for readability */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #392f4d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px; /* Space above the button */
+}
+
+.btn:hover {
+    background-color: #ffb662;
+}
+
+
+
+
+/*Hero image styling*/
+.hero-image{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image img{
+    max-width: 100%;
+    height: auto;
+}
+
+
+/*Form styling*/
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    margin-top: 150px;
+    margin-bottom: 1 0px;
+}
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #392f4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/*User Profile*/
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.profile-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-container section {
+    margin-bottom: 20px;
+}
+
+.profile-container h2 {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea, form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #392f4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/*Quiz management*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #392f4d;
+    color: white;
+}
+
+header .logo {
+    width: 150px;
+}
+
+header .profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+header .profile-dropdown img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+header .profile-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+header .profile-dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+header .profile-dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+header .profile-dropdown:hover .profile-dropdown-content {
+    display: block;
+}
+
+main {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #392f4d;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input, form textarea, form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #392f4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Section Styles */
+.category, .template, .social-sharing, .leaderboard, .analytics {
+    margin-bottom: 30px;
+}
+
+.template-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.template-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: calc(33.333% - 20px); /* Adjust width to fit three items in a row */
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 20px; /* Space between rows */
+}
+
+.template-card h3 {
+    margin-top: 0;
+}
+
+.sharing-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.sharing-options button {
+    margin: 5px 0; /* Margin for buttons */
+    padding: 10px 15px;
+}
+
+.leaderboard {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.leaderboard h3 {
+    margin-top: 0;
+}
+
+.leaderboard ol, .leaderboard ul {
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+}
+
+.leaderboard li {
+    margin-bottom: 10px;
+}
+
+
+.analytics-info {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+
+/*Quiz screen*/
+
+.quiz-list-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Quiz Card Styles */
+.quiz-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    padding: 20px;
+    text-align: left;
+    transition: box-shadow 0.3s;
+}
+
+.quiz-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.quiz-card h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.quiz-card p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.start-quiz-btn {
+    background-color: #392f4d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.start-quiz-btn:hover {
+    background-color: #ffb662;
+}
+
+/* Centering the quiz container */
+.quiz-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* Quiz Header */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#quiz-title {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+}
+
+.timer {
+    font-size: 16px;
+    color: #ff0000;
+    margin-left: 30px;
+    margin-right: 100px;
+}
+
+.question-navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
+
+.question-navigation button {
+    background-color: #392f4d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 0 5px;
+}
+
+.question-navigation button:hover {
+    background-color: #ffb662;
+}
+
+/* Question and Answers */
+.question-container {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#question {
+    font-size: 20px;
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.answers label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.answers input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Quiz Footer */
+.quiz-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#submit-btn {
+    background-color: #392f4d;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit-btn:hover {
+    background-color: #ffb662;
+}
+
+
+
+
+/*Styles for footer*/
+
+footer{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    background: #392f4d;
+    color: #fff;
+    padding: 100px 0 30px;
+    font-size: 14px;
+    line-height: 20px;
+
+}
+
+.row{
+    width: 85%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.footer-col{
+    flex-basis: 25%;
+    padding: 10px; 
+}
+
+.footer-col:nth-child(2), .footer-col:nth-child(3), .footer-col:nth-child(4){
+    flex-basis: 15%;
+}
+
+.Logo{
+    width: 80px;
+    margin-bottom: 25px;
+}
+
+.footer-col h4{
+    width: fit-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.social-links .fab{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+   line-height: 40px;
+   font-size: 20px;
+   color: #FAF9F6;
+   background: #ffb662;
+   margin-right: 15px;
+   cursor: pointer;
+   margin-top: 25px;
+}
+
+ul li{
+    list-style: none;
+    margin-bottom: 12px;
+}
+
+ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+hr{
+    width: 90%;
+    border: o;
+    border-bottom: 1px solid #FAF9F6;
+    margin: 20px auto;
+}
+
+.copyrightText{
+    text-align: center;
+}
+
+@media (max-width: 700px){
+    footer{
+        bottom: unset;
+    }
+    .footer-col{
+        flex-basis: 100%; 
+    }
+    
+    .footer-col:nth-child(2), .footer-col:nth-child(3), .footer-col:nth-child(4){
+        flex-basis: 100%;
+    }
+}

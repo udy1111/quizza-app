@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Logo.png">
+    <title>Profile</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Your Profile</h1>
+        </header>
+
+        <div class="profile-container">
+            <section class="profile-info">
+                <h2>Profile Information</h2>
+                <form action="update_profile.php" method="POST">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" value="CurrentUsername" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" value="currentemail@example.com" required>
+                    
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio" rows="4" cols="50">This is a sample bio.</textarea>
+                    
+                    <button type="submit">Update Profile</button>
+                </form>
+            </section>
+            <section class="progress-info">
+                <h2>Progress</h2>
+                <p><strong>Quizzes Taken:</strong> 10</p>
+                <p><strong>Average Score:</strong> 85%</p>
+                <p><strong>Highest Score:</strong> 100%</p>
+                <p><strong>Lowest Score:</strong> 60%</p>
+                <p><strong>Recent Quizzes:</strong></p>
+                <ul>
+                    <li>Science - 90%</li>
+                    <li>History - 80%</li>
+                    <li>General - 85%</li>
+                </ul>
+            </section>
+            <section class="preferences-info">
+                <h2>Preferences</h2>
+                <form action="update_preferences.php" method="POST">
+                    <label for="notification">Email Notifications:</label>
+                    <select id="notification" name="notification">
+                        <option value="enabled">Enabled</option>
+                        <option value="disabled">Disabled</option>
+                    </select>
+
+                    <label for="theme">Theme:</label>
+                    <select id="theme" name="theme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                    
+                    <button type="submit">Update Preferences</button>
+                </form>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

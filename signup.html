@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Logo.png">
+    <title>Register</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>Create an Account</h1>
+        </header>
+
+        <div class="form-container">
+            <form action="register.php" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </main>
+
+    <p id="message"></p>
+
+    <script>
+        document.getElementById('register-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const first_name = document.getElementById('first_name').value;
+            const last_name = document.getElementById('last_name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const response = await fetch('/api/users/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ first_name, last_name, email, password })
+            });
+
+            const messageElement = document.getElementById('message');
+            if (response.ok) {
+                const data = await response.json();
+                messageElement.textContent = 'Registration successful!';
+                messageElement.style.color = 'green';
+            } else {
+                const errorData = await response.json();
+                messageElement.textContent = 'Registration failed: ${errorData.message}';
+                messageElement.style.color = 'red';
+            }
+        });
+    </script>
+</body>
+</html>
