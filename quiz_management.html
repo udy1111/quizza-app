@@ -33,14 +33,14 @@
                     <input type="text" id="new-category" name="category_name" required>
                     <button type="submit">Add Category</button>
                 </form>
+                <br><br>
                 <h3>Existing Categories</h3>
-                <ul>
-                    <li>General <button type="button">Edit</button> <button type="button">Delete</button></li>
-                    <li>Science <button type="button">Edit</button> <button type="button">Delete</button></li>
-                    <li>History <button type="button">Edit</button> <button type="button">Delete</button></li>
-                    <!-- Add more categories as needed -->
+                <hr>
+                <ul id="categoryList" class="list-group">
+                    <!-- Categories will be appended here -->
                 </ul>
             </section>
+            <br><br>
             <section class="quiz-editor">
                 <h2>Quiz Editor</h2>
                 <form action="save_quiz.php" method="POST">
@@ -148,6 +148,7 @@
                     const data = await response.json();
                     categoryResponse.innerHTML = `<span class="alert alert-success"><strong>${data.category_name}</strong> Category has been Created</span>`;
                     console.log('Category added:', data.category_name);
+                    getAllCategories();
                 } else {
                     const data = await response.json();
                     categoryResponse.innerHTML = `<span class="alert alert-danger">${data.category_name || 'An error occurred'}</span>`;
@@ -160,8 +161,43 @@
         });
 
 
+        // Get All Categories
+
+        async function getAllCategories() {
 
 
+            try {
+                const response = await fetch('https://quizza-rest-api.onrender.com/category', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    categoryList.innerHTML = '';
+                    data.forEach(category => {
+                        const li = document.createElement('li');
+                        li.className = 'list-group-item';
+                        li.textContent = category.category_name;
+                        categoryList.appendChild(li);
+                    });
+                } else {
+                    const data = await response.json();
+                    categoryResponse.innerHTML = `<span class="alert alert-danger">${data.category_name || 'An error occurred'}</span>`;
+                    console.error('Error response:', data.category_name || 'An error occurred');
+                }
+            } catch (error) {
+                categoryResponse.innerHTML = `<span class="alert alert-danger">An error occurred. Please try again later.</span>`;
+                console.error('An error occurred:', error);
+            }
+
+
+        }
+
+
+        getAllCategories();
 
 
 
