@@ -374,17 +374,18 @@
             const category = document.getElementById('quiz-category').value;
             const questionText = document.getElementById('questionText').value;
 
+
             const options = [];
             const correctOption = document.querySelector('input[name="correct_option"]:checked');
 
             if (document.getElementById('multidata').style.display !== 'none') {
                 for (let i = 1; i <= 4; i++) {
                     const optionText = document.getElementById(`option${i}_text_multi`).value;
-                    options.push({ text: optionText, is_correct: correctOption && correctOption.value === String(i) });
+                    options.push({ option_text: optionText, is_correct: correctOption && correctOption.value === String(i) });
                 }
             } else if (document.getElementById('booldata').style.display !== 'none') {
-                options.push({ text: 'True', is_correct: correctOption && correctOption.value === 'true' });
-                options.push({ text: 'False', is_correct: correctOption && correctOption.value === 'false' });
+                options.push({ option_text: 'True', is_correct: correctOption && correctOption.value === 'true' });
+                options.push({ option_text: 'False', is_correct: correctOption && correctOption.value === 'false' });
             }
 
             const payload = {
